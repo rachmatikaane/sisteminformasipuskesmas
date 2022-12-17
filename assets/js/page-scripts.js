@@ -903,18 +903,11 @@ $('.ajax-page.infinite-scroll').bind('scroll', function(){
 	}
 });
 $(document).ready(function () {
-	$('#btn-dismiss-sidebar, .overlay').on('click', function () {
-		$('#sidebar').removeClass('active');
-		$('.overlay').removeClass('active');
-	});
 	$('#sidebarCollapse').on('click', function () {
-		$('#sidebar').toggleClass('active');
-		$('.overlay').toggleClass('active');
+		$('#sidebar, #main-content').toggleClass('active');
 	});
-	var navTopHeight = $('#topbar').outerHeight() + 'px';
-	$('#sidebar').css('top', navTopHeight);
-	$('#sidebar').css('height', 'calc(100vh - ' +  navTopHeight + ')');
-	document.body.style.paddingTop = navTopHeight;
+	var navTopHeight = $('#topbar').outerHeight();
+	document.body.style.paddingTop = navTopHeight + 'px';
 });
 /*
 * Custom Javascript | Jquery codes

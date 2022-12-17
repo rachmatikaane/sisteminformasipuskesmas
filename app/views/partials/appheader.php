@@ -1,4 +1,4 @@
-<div id="topbar" class="navbar navbar-expand-md fixed-top navbar-light bg-warning">
+<div id="topbar" class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?php print_link(HOME_PAGE) ?>">
             <img class="img-responsive" src="<?php print_link(SITE_LOGO); ?>" /> <?php echo SITE_NAME ?>
@@ -6,9 +6,10 @@
             <?php 
             if(user_login_status() == true ){ 
             ?>
-            <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button type="button" id="sidebarCollapse" class="btn btn-warning">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -33,10 +34,7 @@
     <?php 
     if(user_login_status() == true ){ 
     ?>
-    <nav id="sidebar" class="navbar-light bg-warning">
-        <button id="btn-dismiss-sidebar" class="btn btn-sm btn-light">
-            <i class="fa fa-times-circle"></i>
-        </button>
+    <nav id="sidebar" class="navbar-dark bg-dark">
         <ul class="nav navbar-nav w-100 flex-column align-self-start">
             <li class="menu-profile text-center nav-item">
                 <a class="avatar" href="<?php print_link('account') ?>">
@@ -58,7 +56,6 @@
         </ul>
         <?php Html :: render_menu(Menu :: $navbarsideleft  , "nav navbar-nav w-100 flex-column align-self-start"  , "accordion"); ?>
     </nav>
-    <div class="overlay"></div>
     <?php 
     } 
     ?>

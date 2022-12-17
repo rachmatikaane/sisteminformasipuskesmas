@@ -1502,53 +1502,32 @@ label {
 body{
 	padding-top:50px;
 }
-/* Hide sidebar if page with login on index page */
-body.with-login.index-index #main-content, body.index-register #main-content {
-    padding: 0 !important;
+#page-wrapper{
+	display: flex;
+	width: 100%;
+	align-items: stretch;
 }
 
 #sidebar {
-    width: 250px;
-    position: fixed;
-    top: 50px;
-    left: -250px;
-    height: calc(100vh - 50px);
-    z-index: 999;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
-    overflow-y: auto;
-	/* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); */
-	padding-bottom: 40px;
+    min-width: 250px;
+    max-width: 250px;
+	transition: all 0.3s;
 }
-
 #sidebar.active {
-    left: 0;
+    margin-left: -250px;
 }
 
-#btn-dismiss-sidebar {
-    position: absolute;
-    top: 270px;
-	right:450px;
-	z-index: 2000;
+#main-content {
+	width: 100%;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-.overlay.active {
-    display: block;
-    opacity: 1;
+#main #main-content {
+	width: calc(100% - 250px);
 }
 
-
+#main #main-content.active {
+    width: 100%;
+}
 #sidebar .submenu{
 	margin-left: 20px;
 }
@@ -1560,7 +1539,6 @@ body.with-login.index-index #main-content, body.index-register #main-content {
 #sidebar .navbar-nav a.nav-link:hover {
 	background: rgba(0,0,0,0.05);
 }
-
 #sidebar .navbar-nav a.dropdown-toggle::after {
 	float: right;
 	margin-right:7px;
@@ -1576,8 +1554,21 @@ body.with-login.index-index #main-content, body.index-register #main-content {
 }
 
 
-#main-content {
-    transition: all 0.3s;
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+	}
+	
+	#main #main-content {
+        width: 100%;
+    }
+	#main #main-content.active {
+        width: calc(100% - 250px);
+    }
+    
 }
 
 .navbar-brand{

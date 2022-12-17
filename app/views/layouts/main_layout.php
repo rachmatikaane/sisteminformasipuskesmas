@@ -24,7 +24,8 @@
 			Html ::  page_css('blueimp-gallery.css');
 		?>
 				<?php 
-			Html ::  page_css('bootstrap-theme-pulse-blue.css');
+			Html ::  page_css('bootstrap-default.css');
+			Html ::  page_css('bootstrap-theme-flatman.css');
 			Html ::  page_css('custom-style.css');
 		?>
 		<?php
